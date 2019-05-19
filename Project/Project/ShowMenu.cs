@@ -29,7 +29,8 @@ namespace Project
         public void Show(string usname)
         {
             string selection = "";
-            Console.WriteLine($"{usname} Нажимте \"Y\",чтобы увидеть меню пицц,или \"N\" чтобы продолжить заказ");
+            Console.WriteLine
+                ($"{usname},чтобы увидеть меню нажмите ---->\"Y\" \nEсли вы знаете,что будете заказывать нажмите ---->\"N\" ");
             selection = Console.ReadLine();
             // Первести введённую строку в нижний регистр 
             selection = selection.ToLower();

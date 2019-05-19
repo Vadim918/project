@@ -8,16 +8,10 @@ namespace Project
 {
     class EndOrder : Order
     {
-        public static void End()
-        {
-            int result = 0;
-            string order = "";
-            Ord(ref order, ref result);
-            Console.WriteLine($"Заказ {order} \n Cумма: {result}");
-
+        public static void End(int result,string order)
+        { 
+            order = order.Substring(1);
+            Console.WriteLine($"Заказ {order} \n Cумма: {result}");           
         }
-
-
-
     }
 }

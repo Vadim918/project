@@ -6,19 +6,24 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Project
-{
-    
-
-    class Order
-    {
+{  
+    class Order : Program
+    {       
         public static void Ord (ref string sellectionPizza, ref int count)
         {
             string end = "";             
             while (end != "end")
             {
                 Console.WriteLine("Выберете номер раздела из которого хотите заказать пиццу:");
-                // Исключение (ввод буквы)
-                int changeSection = Convert.ToInt32(Console.ReadLine());
+                int changeSection = 0;
+                try
+                {
+                     changeSection = Convert.ToInt32(Console.ReadLine());
+                }
+                catch(Exception ex)
+                {
+                    Console.WriteLine($"Ошибка: {ex.Message} ");
+                }
                 switch (changeSection)
                 {
                     case 1:
@@ -40,18 +45,10 @@ namespace Project
                         Console.WriteLine("Вы ввели незивестный символ");
                         break;
                 }
-                Console.WriteLine("Что нибудь ещё? \n Для выхода ввдеите \"end\")");
+                Console.WriteLine("Что нибудь ещё? \nДля выхода ввдеите \"end\")");
                 end = Console.ReadLine();
-            }
-
-            
+            }           
         }
         
-
-
-
-
-
-
     }
 }
