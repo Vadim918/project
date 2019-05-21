@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 namespace Project
 {
-    interface IBase
+    class File
     {
-        string UsName { get; set; }
-        string Mail { get; set; }       
     }
 }
-

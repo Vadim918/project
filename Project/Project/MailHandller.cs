@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.IO;
-using System.Threading.Tasks;
+﻿using System.Net;
 using System.Net.Mail;
 
 namespace Project
 {
-    class MailHandller : Order
+    class MailHandller 
     {
+       
+
         public static void MesHandler(string @for,int res)
         {
             // отправитель - устанавливаем адрес и отображаемое в письме имя
@@ -18,10 +15,16 @@ namespace Project
                 MailAddress to = new MailAddress(@for);
             // создаем объект сообщения
             MailMessage m = new MailMessage(from, to);
-            // тема письма
-            m.Subject = "Доставка пиццы";
-            // текст письма
-            m.Body = $"Ваш заказ готовиться,сумма для оплаты: {res} \n Будем рады видеть вас ещё в нашем приложении";
+            
+          
+            {
+                // тема письма
+                m.Subject = "Доставка пиццы";
+                // текст письма
+                m.Body = $"Ваш заказ готовиться,сумма для оплаты: {res} \n Будем рады видеть вас ещё в нашем приложении";
+
+            }
+
             // письмо представляет код html
             m.IsBodyHtml = true;
             // адрес smtp-сервера и порт, с которого будем отправлять письмо
